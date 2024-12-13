@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-br from-indigo-50 via-white to-purple-50;
+}
+
+/* Floating animation for the star */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-4px) rotate(8deg); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Subtle background pattern */
+.water-bg::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 80%),
+              radial-gradient(circle at 100% 0%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 0% 100%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus outlines */
+:focus {
+  outline: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.3);
+}
+
+/* Floating animations with different speeds and patterns */
+@keyframes float-slow {
+  0%, 100% { transform: translate(-50%, var(--y-offset, -50%)); }
+  50% { transform: translate(-50%, calc(var(--y-offset, -50%) - 8px)); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(0, -5px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  50% { transform: translate(0, -4px) rotate(8deg); }
+}
+
+/* Random patterns for action buttons */
+@keyframes float-random-1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-2px, -6px); }
+}
+
+@keyframes float-random-2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(2px, -4px); }
+}
+
+@keyframes float-random-3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-1px, -7px); }
+}
+
+@keyframes float-random-4 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(1px, -5px); }
+}
+
+@keyframes float-random-5 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-2px, -4px); }
+}
+
+/* Animation classes */
+.float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+  --y-offset: 0;
+}
+
+.float-medium {
+  animation: float-medium 5s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: float-fast 3s ease-in-out infinite;
+}
+
+.float-random-1 {
+  animation: float-random-1 7s ease-in-out infinite;
+}
+
+.float-random-2 {
+  animation: float-random-2 6.5s ease-in-out infinite;
+}
+
+.float-random-3 {
+  animation: float-random-3 7.5s ease-in-out infinite;
+}
+
+.float-random-4 {
+  animation: float-random-4 6.8s ease-in-out infinite;
+}
+
+.float-random-5 {
+  animation: float-random-5 7.2s ease-in-out infinite;
+}
+
+/* Add slight delay to each button's animation */
+.float-random-1 { animation-delay: 0.2s; }
+.float-random-2 { animation-delay: 0.4s; }
+.float-random-3 { animation-delay: 0.6s; }
+.float-random-4 { animation-delay: 0.8s; }
+.float-random-5 { animation-delay: 1.0s; }
